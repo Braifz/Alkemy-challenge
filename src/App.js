@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react'
+import { Button, Container } from 'react-bootstrap';
 
-function App() {
+import SignIn from './components/SignIn';
+import Home from './components/Home';
+import Header from './components/Header';
+import Footer from './components/Footer'
+
+
+const App = () => {
+  const [ user, setUser ] = useState(false)
+  const tokenInLocalStorage = () => {
+    const tokenKey = localStorage.getItem('tokenNum')
+    if (tokenKey !== null) {
+      setUser(true)
+      console.log(tokenKey, 'si hay!', user)
+    } else {
+      setUser(false)
+      console.log('no hay', user)
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="vh-100">
+      <Header />
+      <Button className="m-3" onClick={tokenInLocalStorage}> Token en localStorage ?</Button>
+      <Container className="d-flex justify-content-center align-items-center p-2 mt-2 mb-3">
+        {user === true ? <Home /> : <SignIn />}
+      </Container>
+      <Footer />
     </div>
   );
 }

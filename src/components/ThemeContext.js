@@ -4,12 +4,12 @@ export const themes = {
   light: {
     background: 'bg-light',
     color: 'text-dark',
-    button: 'btn-light'
+    button: 'btn-light',
   },
   dark: {
     background: 'bg-dark',
     color: 'text-white',
-    button: 'btn-dark'
+    button: 'btn-dark',
   }
 }
 

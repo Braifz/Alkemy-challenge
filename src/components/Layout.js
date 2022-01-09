@@ -1,19 +1,23 @@
-import { useContext } from 'react'
+import { useContext } from "react";
+import { Container } from "react-bootstrap";
 
-import ThemeContext from './ThemeContext'
-import Header from './Header'
-import Footer from './Footer'
+import ThemeContext from "./ThemeContext";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
-  const { theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={`fluid vh-100 ${theme.background} ${theme.color}`}>
+    <Container
+      fluid
+      className={`min-vh-100 p-0 ${theme.background} ${theme.color}`}
+    >
       <Header />
       {children}
       <Footer />
-    </div>
-  )
-}
+    </Container>
+  );
+};
 
-export default Layout
+export default Layout;

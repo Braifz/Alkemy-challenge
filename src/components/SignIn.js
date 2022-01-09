@@ -1,33 +1,33 @@
-import { useContext } from 'react'
-import { Formik, Form } from 'formik'
-import axios from 'axios'
-import { Button, Container } from 'react-bootstrap'
+import { useContext } from "react";
+import { Formik, Form } from "formik";
+import axios from "axios";
+import { Button, Container } from "react-bootstrap";
 
-import TextInput from './TextInput'
+import TextInput from "./TextInput";
 
 const postUser = async (values) => {
   try {
-    const postData = await axios.post('http://challenge-react.alkemy.org/', {
+    const postData = await axios.post("http://challenge-react.alkemy.org/", {
       email: values.email,
       password: values.password,
-    })
-    const token = postData.data.token
-    localStorage.setItem('tokenNum', token)
+    });
+    const token = postData.data.token;
+    localStorage.setItem("tokenNum", token);
   } catch (e) {
-    alert('Email o contraseña incorrecta! :c')
+    alert("Email o contraseña incorrecta! :c");
   }
-}
+};
 
 const validate = (values) => {
-  const errors = {}
+  const errors = {};
   if (!values.email) {
-    errors.email = 'Requerido'
+    errors.email = "Requerido";
   }
   if (!values.password) {
-    errors.password = 'Requerido'
+    errors.password = "Requerido";
   }
-  return errors
-}
+  return errors;
+};
 
 const SignIn = () => {
   return (
@@ -35,8 +35,8 @@ const SignIn = () => {
       <h1 className="fs-1 p-3 text-center border-bottom"> Sign In</h1>
       <Formik
         initialValues={{
-          email: '',
-          password: '',
+          email: "",
+          password: "",
         }}
         validate={validate}
         onSubmit={postUser}
@@ -55,7 +55,7 @@ const SignIn = () => {
         </Form>
       </Formik>
     </Container>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignIn;

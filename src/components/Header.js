@@ -1,6 +1,6 @@
-import { Container } from 'react-bootstrap'
+import { Container } from "react-bootstrap";
 
-import ThemedButton from './ThemedButton'
+import ThemedButton from "./ThemedButton";
 
 const Header = () => {
   return (
@@ -10,7 +10,7 @@ const Header = () => {
         <ThemedButton />
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

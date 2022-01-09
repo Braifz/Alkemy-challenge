@@ -1,52 +1,50 @@
-import { useState, createContext } from 'react'
-import { Button, Container } from 'react-bootstrap'
+import { useState, createContext } from 'react';
+import { Button, Container } from 'react-bootstrap';
 
-import SignIn from './components/SignIn'
-import Home from './components/Home'
-import Layout from './components/Layout'
-import ThemeContext, { themes } from './components/ThemeContext'
-import ThemedButton from './components/ThemedButton'
+import SignIn from './components/SignIn';
+import Home from './components/Home';
+import Layout from './components/Layout';
+import ThemeContext, { themes } from './components/ThemeContext';
+import ThemedButton from './components/ThemedButton';
 
-const UserContext = createContext(false)
+const UserContext = createContext(false);
 
 const App = () => {
-  const [user, setUser] = useState(false)
-  const [theme, setTheme] = useState(themes.dark)
+  const [user, setUser] = useState(false);
+  const [theme, setTheme] = useState(themes.dark);
 
   const handleChangeTheme = () => {
     setTheme(() => {
-      return theme === themes.dark ? themes.light : themes.dark
-    })
-  }
+      return theme === themes.dark ? themes.light : themes.dark;
+    });
+  };
 
   const tokenInLocalStorage = () => {
-    const tokenKey = localStorage.getItem('tokenNum')
+    const tokenKey = localStorage.getItem('tokenNum');
     if (tokenKey !== null) {
-      setUser(true)
-      console.log(tokenKey, 'si hay!', user)
+      setUser(true);
+      console.log(tokenKey, 'si hay!', user);
     } else {
-      setUser(false)
-      console.log('no hay', user)
+      setUser(false);
+      console.log('no hay', user);
     }
-  }
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, handleChangeTheme }}>
       <UserContext.Provider value={user}>
         <Layout>
-          <div>
-            <Button className="m-3" onClick={tokenInLocalStorage}>
-              {' '}
-              Token en localStorage ?
-            </Button>
-            <Container className="mh-100 d-flex justify-content-center align-items-center p-2 mt-2 mb-3">
-              {user === true ? <Home /> : <SignIn />}
-            </Container>
-          </div>
+          <Button className="m-3" onClick={tokenInLocalStorage}>
+            {' '}
+            Token en localStorage ?
+          </Button>
+          <Container className="border border-3 rounded m-auto d-flex justify-content-center align-items-center p-2 mt-2 mb-3">
+            {user === true ? <Home /> : <SignIn />}
+          </Container>
         </Layout>
       </UserContext.Provider>
     </ThemeContext.Provider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

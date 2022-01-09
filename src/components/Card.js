@@ -3,19 +3,25 @@ import { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const Card = ({ props }) => {
-  const [state, setState] = useState('');
+  const AlignamentHeroeBorder =
+    props.biography.alignment === 'good' ? 'border-success' : 'border-danger';
+
+  const AlignamenteHeroeText =
+    props.biography.alignment === 'good' ? 'text-success' : 'text-danger';
 
   return (
     <Container
       fluid
       key={props.id}
-      className="w-75 shadow p-3 border border-3 m-1 rounded mt-3 mb-5"
+      className={`w-75 shadow p-3 border ${AlignamentHeroeBorder} border-3  m-1 rounded mt-3 mb-5`}
     >
       <Row>
         <Col className="text-center">
           <h1>{props.name}</h1>
         </Col>
-        <Col className="d-flex fw-lighter text-center align-items-center justify-content-center">
+        <Col
+          className={`d-flex fw-bold ${AlignamenteHeroeText} text-center align-items-center justify-content-center`}
+        >
           <p>Alignament: {props.biography.alignment}</p>
         </Col>
       </Row>

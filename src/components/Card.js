@@ -1,6 +1,6 @@
-import { Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap'
 
-const Card = ({props}) => {
+const Card = ({ props }) => {
   return (
     <Container fluid>
       <div className="">
@@ -12,4 +12,4 @@ const Card = ({props}) => {
   )
 }
 
-export default Card;
+export default Card

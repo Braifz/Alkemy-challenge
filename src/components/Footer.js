@@ -1,13 +1,13 @@
 import { Container } from 'react-bootstrap'
 
 const Footer = () => {
-    return (
-        <Container className="mw-100 bg-secondary text-center shadow position-absolute bottom-0 shadow ">
-            <p className="pt-3 font-monospace text-light">
-                made by @braifz from alkemy challenge
-            </p>
-        </Container>
-    )
+  return (
+    <Container className="d-flex align-items-center justify-content-center p-3 mw-100 bg-secondary shadow position-relative bottom-0 shadow ">
+      <p className="m-0 font-monospace text-light">
+        made by @braifz from alkemy challenge
+      </p>
+    </Container>
+  )
 }
 
-export default Footer;
+export default Footer

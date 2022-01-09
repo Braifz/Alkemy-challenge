@@ -10,7 +10,7 @@ export const themes = {
     background: 'bg-dark',
     color: 'text-white',
     button: 'btn-dark',
-  }
+  },
 }
 
 const ThemeContext = createContext()

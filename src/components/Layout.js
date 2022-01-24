@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { Container } from "react-bootstrap";
+import { useContext } from 'react';
+import { Container } from 'react-bootstrap';
 
-import ThemeContext from "./ThemeContext";
-import Header from "./Header";
-import Footer from "./Footer";
+import ThemeContext from '../context/ThemeContext';
+import Header from './Header';
+import Footer from './Footer';
 
 const Layout = ({ children }) => {
   const { theme } = useContext(ThemeContext);

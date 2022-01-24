@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap';
 import { useContext } from 'react';
 
 import SearchHeroe from './SearchHeroe';
-import ThemeContext from './ThemeContext';
+import ThemeContext from '../context/ThemeContext';
 
 const Home = () => {
   const { theme } = useContext(ThemeContext);

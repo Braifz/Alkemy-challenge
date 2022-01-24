@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
+
+const addHeroe = () => {};
 
 const Card = ({ props }) => {
   const AlignamentHeroeBorder =
@@ -56,6 +58,11 @@ const Card = ({ props }) => {
             <p>combat: {props.powerstats.combat}</p>
           </Row>
         </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Button onClick={addHeroe} className="w-50  m-2">
+          Add Heroe
+        </Button>
       </Row>
     </Container>
   );

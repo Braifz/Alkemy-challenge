@@ -1,8 +1,8 @@
-import { useContext } from 'react'
-import ThemeContext from './ThemeContext'
+import { useContext } from 'react';
+import ThemeContext from '../context/ThemeContext';
 
 const ThemedButton = () => {
-  const { theme, handleChangeTheme } = useContext(ThemeContext)
+  const { theme, handleChangeTheme } = useContext(ThemeContext);
 
   return (
     <button
@@ -11,7 +11,7 @@ const ThemedButton = () => {
     >
       Theme
     </button>
-  )
-}
+  );
+};
 
-export default ThemedButton
+export default ThemedButton;

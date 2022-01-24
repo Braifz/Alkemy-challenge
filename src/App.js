@@ -4,8 +4,7 @@ import { Button, Container } from 'react-bootstrap';
 import SignIn from './components/SignIn';
 import Home from './components/Home';
 import Layout from './components/Layout';
-import ThemeContext, { themes } from './components/ThemeContext';
-import ThemedButton from './components/ThemedButton';
+import ThemeContext, { themes } from './context/ThemeContext';
 
 const UserContext = createContext(false);
 

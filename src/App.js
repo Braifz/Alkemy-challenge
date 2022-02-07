@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react';
+import { useState, createContext, useEffect } from 'react';
 import { Button, Container } from 'react-bootstrap';
 
 import SignIn from './components/SignIn';
@@ -9,7 +9,7 @@ import ThemeContext, { themes } from './context/ThemeContext';
 const UserContext = createContext(false);
 
 const App = () => {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(true);
   const [theme, setTheme] = useState(themes.dark);
 
   const handleChangeTheme = () => {

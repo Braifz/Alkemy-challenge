@@ -2,9 +2,14 @@ import { useState } from 'react';
 
 import { Button, Container, Row, Col } from 'react-bootstrap';
 
-const addHeroe = () => {};
-
 const Card = ({ props }) => {
+  // Usar redux acá, para manejar el estado y guardar dentro de un array objetos con la data de los heroes elegidos
+
+  const addHeroe = (heroe) => {
+    const heroeChosen = [];
+    heroeChosen.push(heroe);
+  };
+
   const AlignamentHeroeBorder =
     props.biography.alignment === 'good' ? 'border-success' : 'border-danger';
 
@@ -40,22 +45,22 @@ const Card = ({ props }) => {
             <h3> Powerstats: </h3>
           </Row>
           <Row>
-            <p> intelligence : {props.powerstats.intelligence}</p>
+            <p> Intelligence : {props.powerstats.intelligence}</p>
           </Row>
           <Row>
-            <p> strength: {props.powerstats.strength}</p>
+            <p> Strength: {props.powerstats.strength}</p>
           </Row>
           <Row>
-            <p> speed: {props.powerstats.speed}</p>
+            <p> Speed: {props.powerstats.speed}</p>
           </Row>
           <Row>
-            <p>durability: {props.powerstats.durability}</p>
+            <p> Durability: {props.powerstats.durability}</p>
           </Row>
           <Row>
-            <p>power: {props.powerstats.power}</p>
+            <p> Power: {props.powerstats.power}</p>
           </Row>
           <Row>
-            <p>combat: {props.powerstats.combat}</p>
+            <p> Combat: {props.powerstats.combat}</p>
           </Row>
         </Col>
       </Row>

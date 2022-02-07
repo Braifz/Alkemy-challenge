@@ -8,6 +8,8 @@ import Card from './Card';
 const SearchHeroe = () => {
   const [heroe, setHeroe] = useState('');
 
+  //agregar try/catch para manejo de errores
+
   const getData = async (value) => {
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const apiUrl = `https://superheroapi.com/api/4124530737602434/search/${value.search}`;
